@@ -48,8 +48,8 @@ struct GaspRange
   }
 
   public:
-  HBUINT16 	rangeMaxPPEM;	/* Upper limit of range, in PPEM */
-  HBUINT16 	rangeGaspBehavior;
+  HBUINT16	rangeMaxPPEM;	/* Upper limit of range, in PPEM */
+  HBUINT16	rangeGaspBehavior;
 				/* Flags describing desired rasterizer behavior. */
   public:
   DEFINE_SIZE_STATIC (4);
@@ -57,7 +57,7 @@ struct GaspRange
 
 struct gasp
 {
-  enum { tableTag = HB_OT_TAG_gasp };
+  static constexpr hb_tag_t tableTag = HB_OT_TAG_gasp;
 
   const GaspRange &get_gasp_range (unsigned int i) const
   { return gaspRanges[i]; }

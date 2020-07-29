@@ -136,7 +136,7 @@ struct JstfLangSys : OffsetListOf<JstfPriority>
  * ExtenderGlyphs -- Extender Glyph Table
  */
 
-typedef SortedArrayOf<GlyphID> ExtenderGlyphs;
+typedef SortedArrayOf<HBGlyphID> ExtenderGlyphs;
 
 
 /*
@@ -195,7 +195,7 @@ struct JstfScript
 
 struct JSTF
 {
-  enum { tableTag = HB_OT_TAG_JSTF };
+  static constexpr hb_tag_t tableTag = HB_OT_TAG_JSTF;
 
   unsigned int get_script_count () const
   { return scriptList.len; }
@@ -222,7 +222,7 @@ struct JSTF
   FixedVersion<>version;	/* Version of the JSTF table--initially set
 				 * to 0x00010000u */
   RecordArrayOf<JstfScript>
-		scriptList;  	/* Array of JstfScripts--listed
+		scriptList;	/* Array of JstfScripts--listed
 				 * alphabetically by ScriptTag */
   public:
   DEFINE_SIZE_ARRAY (6, scriptList);

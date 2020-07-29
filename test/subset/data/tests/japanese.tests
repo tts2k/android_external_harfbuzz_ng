@@ -1,10 +1,10 @@
 FONTS:
 Mplus1p-Regular.ttf
-SourceHanSans-Regular.otf
 
 PROFILES:
 default.txt
 drop-hints.txt
+keep-gdef.txt
 
 SUBSETS:
 明
@@ -12,6 +12,7 @@ acek
 明極珠度輸清
 あいうえおか
 あいう珠度輸
-
+𝜕𝟘AB
+𥝱
 
 
